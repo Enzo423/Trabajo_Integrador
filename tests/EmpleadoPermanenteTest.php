@@ -29,5 +29,16 @@ class EmpleadoPermamenteTest extends \PHPUnit\Framework\TestCase
            $this->assertEquals( 0, $r->calcularAntiguedad());
 	}
 	
+	public function testNoSePuedeCrearFechasFuturas()
+    {
+		//$fechaIngreso = new DateTime();
+        //$fechaIngreso->add(new DateInterval('P1D'));
+        $this->expectException(\Exception::class);
+        $r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = (new \DateTime())->modify('1 day'));
+		
+    }
+	
 }
+
+
 ?>
