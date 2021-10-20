@@ -44,5 +44,13 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
 		
     }
 	
+	public function testNoSePuedeCrearDniConLetras()
+    {
+		
+        $this->expectException(\Exception::class);
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = "abc", $salario = 25000, $sector="No especificado");
+		
+    }
+	
 }
 ?>
