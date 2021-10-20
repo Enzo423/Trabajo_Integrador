@@ -22,5 +22,12 @@ class EmpleadoPermamenteTest extends \PHPUnit\Framework\TestCase
 			$this->assertEquals( $dias, $r->calcularAntiguedad());
 	}
 	
+	public function testRetornaCero()
+    {
+			$r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = new \DateTime());
+			 $this->assertEquals( $fechaIngreso, $r->getFechaIngreso());
+           $this->assertEquals( 0, $r->calcularAntiguedad());
+	}
+	
 }
 ?>
