@@ -28,5 +28,13 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
 		
     }
 	
+	public function testNoSePuedeCrearDniEmpty()
+    {
+		
+        $this->expectException(\Exception::class);
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 0, $salario = 25000, $sector="No especificado");
+		
+    }
+	
 }
 ?>
