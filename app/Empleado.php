@@ -63,3 +63,9 @@ class Empleado
       return "{$this->nombre} {$this->apellido} {$this->dni} {$this->salario}";
     }
 }
+
+
+
+
+
+

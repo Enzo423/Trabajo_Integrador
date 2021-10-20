@@ -3,16 +3,16 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
 {
 	public function testSePuedenObtenerLosDatos()
 	{
-		$r = new \App\Empleado("Enzo", "Sandoval", 44021952, 25000);
-		$this->assertEquals( 44021952, $r->getDNI());
+		$r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $sector = "");
+        $this->assertEquals( $nombre . " " . $apellido, $r->getNombreApellido());
+		$this->assertEquals( $dni, $r->getDNI());
+		$this->assertEquals( $salario, $r->getSalario());
+		$this->assertEquals( $sector, $r->getSector());
+		$this->assertEquals( $nombre . " " . $apellido . " " . $dni . " " . $salario, $r->__toString());
 	}
 	
-	 public function testNoSePuedeCrearRectanguloConMedidasNegativas()
-    {
-        $this->expectException(\Exception::class);
-        //Lanzará una excepción, porque la base no puede ser cero:
-        $r = new \App\Empleado("", "", 0, 25000, "eCommerce");
-    }	
+	
+	
 	
 }
 ?>
