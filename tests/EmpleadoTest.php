@@ -36,5 +36,13 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
 		
     }
 	
+	public function testNoSePuedeCrearSalarioEmpty()
+    {
+		
+        $this->expectException(\Exception::class);
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 0, $sector="No especificado");
+		
+    }
+	
 }
 ?>
