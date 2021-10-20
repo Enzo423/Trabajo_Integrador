@@ -16,7 +16,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
     {
 		
         $this->expectException(\Exception::class);
-        $r = new \App\Empleado($nombre = "", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $sector="No especificado");
+        $r = new \App\Empleado($nombre = NULL, $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $sector="No especificado");
 		
     }
 	
@@ -24,7 +24,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
     {
 		
         $this->expectException(\Exception::class);
-        $r = new \App\Empleado($nombre = "Enzo", $apellido = "", $dni = 44021952, $salario = 25000, $sector="No especificado");
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = NULL, $dni = 44021952, $salario = 25000, $sector="No especificado");
 		
     }
 	
@@ -32,7 +32,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
     {
 		
         $this->expectException(\Exception::class);
-        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 0, $salario = 25000, $sector="No especificado");
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = NULL, $salario = 25000, $sector="No especificado");
 		
     }
 	
@@ -40,7 +40,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase
     {
 		
         $this->expectException(\Exception::class);
-        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 0, $sector="No especificado");
+        $r = new \App\Empleado($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = NULL, $sector="No especificado");
 		
     }
 	
