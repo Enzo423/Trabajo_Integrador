@@ -1,6 +1,12 @@
 <?php 
 class EmpleadoPermamenteTest extends \PHPUnit\Framework\TestCase
 {
+	public function testSePuedeObtenerLaFecha()
+    {
+			$r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = new \DateTime());
+			$this->assertEquals( $fechaIngreso, $r->getFechaIngreso());
+	}
+	
     public function testSePuedeCalcularLaComision()
     {
 			$r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = new \DateTime('22-04-2018'));
@@ -15,7 +21,7 @@ class EmpleadoPermamenteTest extends \PHPUnit\Framework\TestCase
 	
 	public function testSePuedeCalcularAntiguedad()
     {
-			$r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = new \DateTime('2001-04-21'));
+			$r = new \App\EmpleadoPermanente($nombre = "Enzo", $apellido = "Sandoval", $dni = 44021952, $salario = 25000, $fechaIngreso = new \DateTime('22-04-2001'));
             $fechaActual =  new \DateTime();
             $diff = $fechaIngreso->diff($fechaActual);
             $dias = $diff->format("%y");
